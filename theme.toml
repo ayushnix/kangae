@@ -1,0 +1,9 @@
+name = "kangae"
+description = "a lightweight microblog theme for zola"
+license = "NCSA"
+homepage = "https://github.com/ayushnix/kangae"
+min_version = "0.15.0"
+
+[author]
+name = "Ayush Agarwal"
+homepage = "https://microblog.ayushnix.com"
