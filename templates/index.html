@@ -1,0 +1,12 @@
+{% import "macros/article.html" as article %}
+{% extends "base.html" -%}
+
+{%- block main %}
+  {%- for post in section.pages %}
+  <article>
+    {{ article::header(page=post) }}
+    {{ article::content(page=post) }}
+    {{ article::footer(page=post) }}
+  </article>
+  {% endfor -%}
+{% endblock -%}
