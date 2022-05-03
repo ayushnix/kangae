@@ -1,0 +1,276 @@
+@import url("variables-light-theme.css") (prefers-color-scheme: light);
+@import url("variables-dark-theme.css") (prefers-color-scheme: dark);
+
+:root {
+  --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
+  --mono-font: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Inconsolata, monospace;
+
+  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1280,18,1.25,4,5,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step-s5: clamp(0.37rem, calc(0.41rem + -0.06vw), 0.40rem);
+  --step-s4: clamp(0.46rem, calc(0.49rem + -0.04vw), 0.48rem);
+  --step-s3: clamp(0.58rem, calc(0.58rem + 0.00vw), 0.58rem);
+  --step-s2: clamp(0.69rem, calc(0.69rem + 0.04vw), 0.72rem);
+  --step-s1: clamp(0.83rem, calc(0.81rem + 0.11vw), 0.90rem);
+  --step-x0: clamp(1.00rem, calc(0.96rem + 0.21vw), 1.13rem);
+  --step-x1: clamp(1.20rem, calc(1.13rem + 0.34vw), 1.41rem);
+  --step-x2: clamp(1.44rem, calc(1.33rem + 0.53vw), 1.76rem);
+  --step-x3: clamp(1.73rem, calc(1.57rem + 0.78vw), 2.20rem);
+  --step-x4: clamp(2.07rem, calc(1.85rem + 1.12vw), 2.75rem);
+
+  /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1280,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4,s-l */
+  --space-3xs: clamp(0.25rem, calc(0.23rem + 0.10vw), 0.31rem);
+  --space-2xs: clamp(0.50rem, calc(0.48rem + 0.10vw), 0.56rem);
+  --space-xs: clamp(0.75rem, calc(0.71rem + 0.21vw), 0.88rem);
+  --space-s: clamp(1.00rem, calc(0.96rem + 0.21vw), 1.13rem);
+  --space-m: clamp(1.50rem, calc(1.44rem + 0.31vw), 1.69rem);
+  --space-l: clamp(2.00rem, calc(1.92rem + 0.42vw), 2.25rem);
+  --space-xl: clamp(3.00rem, calc(2.88rem + 0.63vw), 3.38rem);
+  --space-2xl: clamp(4.00rem, calc(3.83rem + 0.83vw), 4.50rem);
+
+  --width: 65ch;
+  --body-line-height: 1.5;
+  --head-line-height: 1.3;
+}
+
+html {
+  /* use the border-box box model instead of the browser default content-box */
+  box-sizing: border-box;
+  /* prevent layout shift when switching between pages with and without a
+   * scrollbar */
+  scrollbar-gutter: stable both-edges;
+}
+
+/* inherit the border-box model in all elements */
+/* this allows elements to override the box-model if needed and make their
+ * children inherit their custom box-model */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* remove all browser default margins and paddings */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* if any of the following elements don't exist, the rule still applies  */
+:is(code, kbd, samp, pre) {
+  font-family: var(--mono-font);
+}
+
+/* reduce distraction from text by removing underlines from hyperlinks */
+/* rely on color to distinguish hyperlinks */
+a {
+  color: var(--fg-href);
+  text-decoration: none;
+}
+
+/* underline hyperlinks on hover and increase their underline offset */
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: var(--step-s5);
+}
+
+/* change the color of visited hyperlinks */
+a:visited {
+  color: var(--fg-href-visited);
+}
+
+/* if the role of a list is explicitly defined, it isn't being used as a list */
+ul[role="list"] {
+  padding: 0;
+  list-style: none;
+}
+
+/* prevent overflow of possibly long lines */
+p,
+li,
+h1 {
+  overflow-wrap: break-word;
+}
+
+img,
+video {
+  /* never render images wider than their containing element */
+  max-inline-size: 100%;
+  /* preserve the aspect ratio of the image */
+  block-size: auto;
+}
+
+/* -------------------------------------------------------------------------- */
+
+body {
+  /* layout */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  /* readability */
+  margin: var(--space-m) auto;
+  width: min(90%, var(--width));
+  font-size: var(--step-x0);
+  line-height: var(--body-line-height);
+  /* aesthetics */
+  font-family: var(--sans-font);
+  color: var(--fg-color);
+  background: var(--bg-color);
+}
+
+/* add margins on the left and right of the child elements of body */
+/* body > * { */
+/*   margin-inline: auto; */
+/* } */
+
+/* -------------------------------------------------------------------------- */
+
+.primary-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: var(--space-xs);
+}
+
+.avatar {
+  border-radius: var(--step-x1);
+}
+
+h1 {
+  font-size: var(--step-x3);
+  line-height: var(--head-line-height);
+}
+
+/* -------------------------------------------------------------------------- */
+
+:is(.primary-nav, .primary-footer, .article-footer, .tag-list-nav) > ul[role="list"] {
+  display: flex;
+  flex-flow: row wrap;
+  /* prevent accidental incorrect clicks by increasing space between elements */
+  justify-content: space-evenly;
+  gap: var(--space-s);
+}
+
+.primary-footer {
+  font-size: var(--step-s1);
+  border-block-start: 0.1em dotted var(--fg-border);
+}
+
+/* add a hash symbol before the taxonomy tag links */
+.tag::before {
+  content: "#";
+}
+
+.tag-sup {
+  padding-inline: var(--space-3xs);
+}
+
+/* the stack layout for the child elements of article */
+article > * + * {
+  margin-top: var(--space-s);
+}
+
+/* the stack layout for the body and the main element */
+:is(body, main) > * + * {
+  margin-top: var(--space-l);
+}
+
+.article-header > ul[role="list"] {
+  display: inline-flex;
+  flex-flow: row wrap;
+  gap: var(--space-2xs);
+}
+
+.article-header {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  border-block-end: 0.1em dotted var(--fg-border);
+}
+
+/* borrowed from the html5-boilerplate css file on github */
+/* h5bp/html5-boilerplate/blob/5382f78315be9ed31546131ec543353d9c4ee5b3/dist/css/style.css#L109 */
+/* hide the title by default */
+.post-title {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.post-title::before {
+  content: " · ";
+
+}
+
+/* show the title on devices which are at least as wide as the iPad Mini */
+@media screen and (min-width: 48rem) {
+  .post-title {
+    clip: inherit;
+    height: inherit;
+    margin: inherit;
+    overflow: inherit;
+    position: inherit;
+    white-space: inherit;
+    width: inherit;
+  }
+}
+
+.unknown-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-block: var(--space-xl);
+}
+
+/* -------------------------------------------------------------------------- */
+
+/* don't style h2 to h6 because it's not needed on this website */
+:is(h2, h3, h4, h5, h6) {
+  font-size: var(--step-x0);
+}
+
+pre {
+  padding: var(--space-2xs);
+  border: 0.1em solid var(--fg-border);
+  border-radius: var(--step-s5);
+}
+
+.unknown-page-emoticon {
+  font-size: var(--step-x3);
+  padding: var(--space-2xs);
+  border: 0;
+  border-radius: 0;
+}
+
+blockquote {
+  padding: var(--space-2xs);
+  border-inline-start: var(--step-s4) solid var(--fg-border);
+}
+
+:is(ul, ol) {
+  padding-inline: var(--space-l);
+}
+
+mark {
+  /* plays well with at least 1.5 line-height or more */
+  padding-inline: var(--space-3xs);
+  padding-block: 0.1em;
+  color: var(--fg-mark);
+  background: var(--bg-mark);
+  border-radius: var(--step-s5);
+}
+
+kbd {
+  border-inline: 0.1em solid var(--fg-border);
+  border-block-start: 0.1em solid var(--fg-border);
+  border-block-end: 0.2em solid var(--fg-border);
+  border-radius: var(--step-s5);
+  padding-inline: var(--space-3xs);
+  padding-block: 0.1em;
+}
+
+/* -------------------------------------------------------------------------- */
