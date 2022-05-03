@@ -1,0 +1,20 @@
+{% import "macros/article.html" as article %}
+{% extends "base.html" %}
+
+{% block total_posts %}
+  {% if term and term.pages and term.pages | length == 1 %}
+    <li><a class="tag" href="{{ get_taxonomy_url(kind="tags", name=term.name) }}">{{ term.name }}</a> - {{ term.pages | length }} post and counting ...</li>
+  {% elif term and term.pages and term.pages | length > 1 %}
+    <li><a class="tag" href="{{ get_taxonomy_url(kind="tags", name=term.name) }}">{{ term.name }}</a> - {{ term.pages | length }} posts and counting ...</li>
+  {% endif %}
+{% endblock %}
+
+{% block main %}
+  {% for post in term.pages %}
+  <article>
+    {{ article::header(page=post) }}
+    {{ article::content(page=post) }}
+    {{ article::footer(page=post) }}
+  </article>
+  {% endfor %}
+{% endblock %}
