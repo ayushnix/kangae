@@ -1,0 +1,11 @@
+/* one dark colorscheme */
+
+:root {
+  --fg-color: #abb2bf;
+  --bg-color: #282c34;
+  --fg-href: #61afef;
+  --fg-href-visited: #e5c07b;
+  --fg-border: #828997;
+  --bg-mark: #e5c07b;
+  --fg-mark: #282c34;
+}
