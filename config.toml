@@ -90,6 +90,15 @@ navbar = [
   { name = "github", url = "https://github.com/ayushnix/kangae" }
 ]
 
+# https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
+# [optional] the light color for the user interface of the web browser
+# the default value is written below
+# light_theme_color = "#F0F0F0"
+
+# [optional] the dark color for the user interface of the web browser
+# the default value is written below
+# dark_theme_color = "#282C34"
+
 [extra.content_license]
 # [recommended] the spdx identifier of the license of content on your microblog
 spdx = "CC-BY-NC-ND-4.0"
