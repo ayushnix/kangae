@@ -93,11 +93,11 @@ navbar = [
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
 # [optional] the light color for the user interface of the web browser
 # the default value is written below
-# light_theme_color = "#F0F0F0"
+# light_theme_color = "#f0f0f0"
 
 # [optional] the dark color for the user interface of the web browser
 # the default value is written below
-# dark_theme_color = "#282C34"
+# dark_theme_color = "#282c34"
 
 [extra.content_license]
 # [recommended] the spdx identifier of the license of content on your microblog
