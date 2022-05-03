@@ -1,0 +1,27 @@
+{% import "macros/head.html" as head -%}
+{% extends "base.html" %}
+
+{%- block opengraph_basic_meta %}
+{% endblock -%}
+
+{%- block opengraph_optional_meta %}
+{% endblock -%}
+
+{%- block base_canonical %}
+    <base href="{{ config.base_url | safe }}/">
+{% endblock -%}
+
+{%- block ogtitle %}
+  {{ head::ogtitle(tl="404") }}
+{% endblock -%}
+
+{%- block title %}
+  {{ head::head_title(tl="404") }}
+{% endblock -%}
+
+{%- block main %}
+  <div class="unknown-page">
+    <pre role="img" aria-label="the shruggie emoticon used to express a shrug" class="unknown-page-emoticon">¯\_(ツ)_/¯</pre>
+    <p>You're looking for something that doesn't exist</p>
+  </div>
+{% endblock -%}
