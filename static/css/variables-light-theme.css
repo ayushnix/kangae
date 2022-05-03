@@ -1,0 +1,11 @@
+/* modus operandi colorscheme */
+
+:root {
+  --fg-color: #282828;
+  --bg-color: #f0f0f0;
+  --fg-href: #0000c0;
+  --fg-href-visited: #5f4400;
+  --fg-border: #505050;
+  --bg-mark: #f9ff00;
+  --fg-mark: #282828;
+}
