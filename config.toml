@@ -1,0 +1,148 @@
+# please refer to
+# https://www.getzola.org/documentation/getting-started/configuration/
+# for the complete configuration file
+
+# [MANDATORY] the URL of the microblog
+base_url = "https://ayushnix.github.io/kangae/"
+
+# [recommended] kangae doesn't use sass for its global stylesheet
+compile_sass = false
+
+# enable this when using kangae as a theme
+# theme = "kangae"
+
+# [optional] minify HTML to save space at the cost of readability
+minify_html = false
+
+# [recommended] generate an atom or rss feed
+generate_feed = true
+
+# [recommended] the name of the feed
+# if it's set to 'rss.xml', an RSS feed will be generated
+feed_filename = "atom.xml"
+
+# [recommended] the title of the website
+title = "shikamaru microblog"
+
+# [recommended] the description of the website
+description = "the personal microblog of shikamaru"
+
+# [recommended] the default language of the website
+default_language = "en"
+
+# [recommended] the different kinds of taxonomies for the website
+taxonomies = [
+  { name = "tags", feed = true }
+]
+
+# ---------------------------------------------------------------------------- #
+
+# configuration for how the markdown blog posts are rendered
+[markdown]
+
+# [optional] enable syntax highlighting for source code
+# syntax highlight, in itself isn't sufficient and if enabled, it needs to
+# support both light and dark modes which will add an overhead of approximately
+# 6kb of unminified CSS. you can decide if it's worth it or not
+highlight_code = false
+
+# [optional] convert text emoji, such as :smile:,to the actual iconic emoji
+render_emoji = true
+
+# [optional] open external links in a new tab and add `rel="noopener"`
+external_links_target_blank = true
+
+# [optional] tell search engines not to follow external links
+external_links_no_follow = false
+
+# [optional] add `rel=noreferrer` for privacy
+external_links_no_referrer = true
+
+# [optional] change "quote" to “curly” and other style changes
+smart_punctuation = false
+
+# ---------------------------------------------------------------------------- #
+
+[extra]
+# [recommended] your name
+author = "Nara Shikamaru"
+
+# [recommended] your internet username
+username = "shikamaru"
+
+# [optional] your 128px avatar, preferably svg
+# optimize your image using something like squoosh.app
+avatar = "/shikamaru_avatar.webp"
+
+# [optional] the keywords which highlight the type of content on your microblog
+keywords = [ "microblog", "linux", "devops", "openbsd" ]
+
+# [optional] add custom css
+# custom_css = "css/custom.css"
+
+# [optional] add a web app manifest
+# manifest = "/site.webmanifest"
+
+# [optional] additional links that should be present in the navbar
+# `name` and `url` should be present for visibility
+navbar = [
+  { name = "mastodon", url = "https://social.treehouse.systems/@ayushnix" },
+  { name = "github", url = "https://github.com/ayushnix/kangae" }
+]
+
+[extra.content_license]
+# [recommended] the spdx identifier of the license of content on your microblog
+spdx = "CC-BY-NC-ND-4.0"
+
+# [recommended] the url of the license
+url = "https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt"
+
+[extra.source_license]
+# [recommended] the spdx identifier for the license of source code on your microblog
+spdx = "0BSD"
+
+# [recommended] the url of the license
+url = "https://spdx.org/licenses/0BSD.html"
+
+# [recommended] the url of the source code of the microblog itself
+src_url = "https://github.com/ayushnix/kangae"
+
+[extra.opengraph]
+# [optional] opengraph image that should be visible when sharing links on social media
+# websites and messaging apps
+# img = "/apple-touch-icon.png"
+
+# [optional] specifying the alt text is recommended if opengraph img is enabled
+# alt = "opengraph image description"
+
+[extra.favicon]
+
+# [recommended] a SVG favicon
+# svg = "/favicon.svg"
+
+# [recommended] generate a 32px PNG favicon from the SVG
+# png = "/favicon-32x32.png"
+
+# [recommended] generate either a 180px or a 192px PNG image
+# 180px - if you want to use the size recommended by apple
+# 192px - if you want to use a single 192px image both for apple devices and for
+# the android web app manifest; the image will be automatically resized to 180px
+# for apple devices
+# apple = "/apple-touch-icon.png"
+
+[extra.post_footer]
+
+# [recommended] show a permalink to microblog posts
+share = true
+
+# [optional] show a link which redirects to github discussions for writing comments
+# in the example provided below, the URL will be
+# https://github.com/ayushnix/kangae/discussions/new?category=general&title=The+Post+Title
+discuss_github = true
+github_url = "https://github.com/ayushnix/kangae"
+
+# [optional] other misc urls that should be shown in the post footers
+# both `name` and `url` should be defined for visibility
+# misc = [
+#   { name = "misc", url = "https://misc.xyz" }
+# ]
