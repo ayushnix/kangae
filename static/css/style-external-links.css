@@ -1,0 +1,10 @@
+a[href]:not(:where(
+[href^="#"],
+[href^="/"]:not([href^="//"]),
+[href^=".."],
+[href*="//ayushnix.com"],
+[href*="//microblog.ayushnix.com"],
+[href*="//wiki.ayushnix.com"],
+))::after {
+  content: " ↗";
+}
