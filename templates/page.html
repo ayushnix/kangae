@@ -1,0 +1,10 @@
+{% import "macros/article.html" as article %}
+{%- extends "base.html" %}
+
+{%- block main %}
+  <article>
+    {{ article::header(page=page) }}
+    {{ article::content(page=page) }}
+    {{ article::footer(page=page) }}
+  </article>
+{% endblock -%}
