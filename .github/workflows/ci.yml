@@ -1,0 +1,19 @@
+---
+name: build kangae and publish to gh-pages
+
+on:
+  push:
+    branches: master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout master
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: build and deploy
+        uses: shalzz/zola-deploy-action@master
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
