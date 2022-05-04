@@ -58,6 +58,7 @@ html {
 /* if any of the following elements don't exist, the rule still applies  */
 :is(code, kbd, samp, pre) {
   font-family: var(--mono-font);
+  overflow-x: auto;
 }
 
 /* reduce distraction from text by removing underlines from hyperlinks */
