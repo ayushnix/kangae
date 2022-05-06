@@ -3,7 +3,7 @@
 # for the complete configuration file
 
 # [MANDATORY] the URL of the microblog
-base_url = "https://ayushnix.github.io/kangae/"
+base_url = "https://kangae.ayushnix.com"
 
 # [recommended] kangae doesn't use sass for its global stylesheet
 compile_sass = false
