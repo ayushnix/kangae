@@ -6,5 +6,6 @@ a[href]:not(:where(
 [href*="//microblog.ayushnix.com"],
 [href*="//wiki.ayushnix.com"],
 ))::after {
+  font-size: var(--step-s1);
   content: " ↗";
 }
