@@ -17,6 +17,14 @@ create kangae after I came across [Wolfgang Müller's microblog][3]. Thanks Wolf
 kangae is licensed under the [NCSA license][5], which is quite similar to the BSD-3-Clause license.
 Unlike BSD-3-Clause, NCSA also covers documentation of a project.
 
+# Showcase
+
+Here's a list of websites using the kangae theme
+
+- [ayushnix microblog][4]
+
+If you want to mention your website in this section, please raise a pull request.
+
 # Installation
 
 Before using this theme, [install zola][6]. After you've installed zola,
@@ -85,14 +93,6 @@ please [raise an issue][8].
 kangae includes some optional features that aren't enabled by default
 
 - [style external links using a ↗ unicode symbol][11]
-
-# Showcase
-
-Here's a list of websites using the kangae theme
-
-- [ayushnix microblog][4]
-
-If you want to mention your website in this section, please raise a pull request.
 
 # TODO (maybe?)
 
