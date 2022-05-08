@@ -51,7 +51,7 @@
     <header class="primary-header">
       {% if config.extra.avatar %}
         <a href="{{ config.base_url | safe }}">
-          <img src="{{ get_url(path=config.extra.avatar) }}" alt="the avatar image of {{ config.extra.author }}" width=128px class="avatar">
+          <img src="{{ get_url(path=config.extra.avatar) }}" alt="the avatar image of {{ config.extra.author }}" class="avatar">
         </a>
       {% endif %}
       <ul role="list">
