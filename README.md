@@ -97,13 +97,14 @@ kangae includes some optional features that aren't enabled by default
 # TODO (maybe?)
 
 - (responsive) image shortcodes
-- a11y shortcode for ASCII emoticons
 - sample favicon, opengraph content, and web manifest
 - run prettier on HTML and CSS before deployment
 - pagination
 - twitter and mastodon shortcodes
 - add optional support for cross posting and commenting on mastodon without using JS
 - add optional support for [giscus][9] and [loading mastodon comments][10]
+- add shortcode for asciinema
+- add shortcode for blockquote and citation
 
 [1]: https://kangae.ayushnix.com/
 [2]: https://www.getzola.org/
