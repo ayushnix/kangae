@@ -5,17 +5,17 @@
   --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
   --mono-font: ui-monospace, "Cascadia Mono", Consolas, "SF Mono", Inconsolata, monospace;
 
-  /* @link https://utopia.fyi/type/calculator?c=320,16,1.2,1280,18,1.25,4,5,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
-  --step-s5: clamp(0.37rem, calc(0.41rem + -0.06vw), 0.40rem);
-  --step-s4: clamp(0.46rem, calc(0.49rem + -0.04vw), 0.48rem);
-  --step-s3: clamp(0.58rem, calc(0.58rem + 0.00vw), 0.58rem);
-  --step-s2: clamp(0.69rem, calc(0.69rem + 0.04vw), 0.72rem);
-  --step-s1: clamp(0.83rem, calc(0.81rem + 0.11vw), 0.90rem);
-  --step-x0: clamp(1.00rem, calc(0.96rem + 0.21vw), 1.13rem);
-  --step-x1: clamp(1.20rem, calc(1.13rem + 0.34vw), 1.41rem);
-  --step-x2: clamp(1.44rem, calc(1.33rem + 0.53vw), 1.76rem);
-  --step-x3: clamp(1.73rem, calc(1.57rem + 0.78vw), 2.20rem);
-  --step-x4: clamp(2.07rem, calc(1.85rem + 1.12vw), 2.75rem);
+  /* @link https://utopia.fyi/type/calculator?c=320,14,1.125,1280,18,1.25,4,5,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l */
+  --step-s5: clamp(0.37rem, calc(0.52rem + -0.19vw), 0.49rem);
+  --step-s4: clamp(0.46rem, calc(0.57rem + -0.14vw), 0.55rem);
+  --step-s3: clamp(0.58rem, calc(0.63rem + -0.06vw), 0.61rem);
+  --step-s2: clamp(0.69rem, calc(0.68rem + 0.05vw), 0.72rem);
+  --step-s1: clamp(0.78rem, calc(0.74rem + 0.20vw), 0.90rem);
+  --step-x0: clamp(0.88rem, calc(0.79rem + 0.42vw), 1.13rem);
+  --step-x1: clamp(0.98rem, calc(0.84rem + 0.70vw), 1.41rem);
+  --step-x2: clamp(1.11rem, calc(0.89rem + 1.08vw), 1.76rem);
+  --step-x3: clamp(1.25rem, calc(0.93rem + 1.59vw), 2.20rem);
+  --step-x4: clamp(1.40rem, calc(0.95rem + 2.24vw), 2.75rem);
 
   /* @link https://utopia.fyi/space/calculator?c=320,16,1.2,1280,18,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4,s-l */
   --space-3xs: clamp(0.25rem, calc(0.23rem + 0.10vw), 0.31rem);
