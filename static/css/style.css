@@ -184,7 +184,7 @@ article > * + * {
 
 .article-header {
   display: flex;
-  flex-flow: row wrap;
+  gap: var(--space-2xs);
   justify-content: space-between;
   border-block-end: 0.1em dotted var(--fg-border);
 }
