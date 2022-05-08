@@ -20,4 +20,4 @@ Meh, who cares about that anyways.
 
 *What about the tags?*
 
-Yeah, let's skip those as well. What a drag ...
+Yeah, let's skip those as well. What a drag ... {{ kaomoji(label="shrug kaomoji", text="╮( ˘_˘ )╭") }}
