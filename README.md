@@ -14,8 +14,8 @@
 I've created kangae from scratch and it is not based on any other theme. However, I was inspired to
 create kangae after I came across [Wolfgang Müller's microblog][3]. Thanks Wolf!
 
-kangae is licensed under the [NCSA license][5], which is quite similar to the 3-Clause BSD license.
-However, NCSA also covers documentation of a project while 3-Clause-BSD doesn't.
+kangae is licensed under the [NCSA license][5], which is quite similar to the BSD-3-Clause license.
+Unlike BSD-3-Clause, NCSA also covers documentation of a project.
 
 # Installation
 
