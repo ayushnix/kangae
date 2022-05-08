@@ -88,6 +88,25 @@ The [`config.toml`][7] file of kangae has been documented carefully using TOML c
 any questions about configuring kangae which haven't been answered in the `config.toml` file itself,
 please [raise an issue][8].
 
+## Shortcodes
+
+kangae provides several shortcodes that can be used to add content in an accessible manner
+
+### kaomoji `(・_・)ノ`
+
+If you want to use kaomoji in your posts, you can use insert them in an accessbile manner using
+
+```
+I don't know. {{ kaomoji(label="shrug kaomoji", text="╮( ˘_˘ )╭") }} I've never thought about it.
+```
+
+Providing a value for the `label` is optional but highly recommended. A short text should be
+mentioned that explains what the kaomoji means to convey. The value of `text` should be the actual
+emoticon itself.
+
+This shortcode can also be used for any other ASCII emoticon that can fit in an inline paragraph.
+This includes western emoticons such as `;)` and combination emoticons such as `<(^_^<)`.
+
 ## Optional Features
 
 kangae includes some optional features that aren't enabled by default
