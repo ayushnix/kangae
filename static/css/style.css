@@ -135,13 +135,6 @@ body {
 
 .avatar {
   border-radius: var(--step-x1);
-  width: 80px;
-}
-
-@media screen and (min-width: 48rem) {
-  .avatar {
-    width: 128px;
-  }
 }
 
 h1 {
