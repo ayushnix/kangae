@@ -71,7 +71,8 @@ author = "Nara Shikamaru"
 username = "shikamaru"
 
 # [optional] your 128px avatar, preferably svg
-# optimize your image using something like squoosh.app
+# optimize your image using something like squoosh.app and try to make it as small in file size as
+# possbile to prevent layout shifts
 avatar = "/images/shikamaru_avatar.webp"
 
 # [optional] the keywords which highlight the type of content on your microblog
