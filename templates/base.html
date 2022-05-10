@@ -51,7 +51,12 @@
     <header class="primary-header">
       {% if config.extra.avatar %}
         <a href="{{ config.base_url | safe }}">
-          <img src="{{ get_url(path=config.extra.avatar) }}" alt="the avatar image of {{ config.extra.author }}" class="avatar">
+          <picture>
+            {% set meta = get_image_metadata(path=config.extra.avatar) %}
+            <source media="(min-width: 48rem)" srcset="{{ get_url(path=config.extra.avatar) | safe }}" type="image/{{ meta.format | replace(from="svg", to="svg+xml") }}" height=128 width=128>
+            <source srcset="{{ get_url(path=config.extra.avatar) | safe }}" type="image/{{ meta.format | replace(from="svg", to="svg+xml") }}" height=80 width=80>
+            <img src="{{ get_url(path=config.extra.avatar) | safe }}" alt="the avatar image of {{ config.extra.author }}" weight=128 height=128 class="avatar">
+          </picture>
         </a>
       {% endif %}
       <ul role="list">
