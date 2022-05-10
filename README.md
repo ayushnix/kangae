@@ -113,6 +113,16 @@ kangae includes some optional features that aren't enabled by default
 
 - [style external links using a ↗ unicode symbol][11]
 
+# Donate
+
+If you found kangae helpful in creating your own microblog website, please consider supporting me by
+buying me a coffee :coffee:
+
+<a href='https://www.buymeacoffee.com/ayushnix' target='_blank' rel="noopener"><img src='https://cdn.buymeacoffee.com/buttons/default-blue.png' alt='buy ayushnix a coffee at buymeacoffee.com' border='0' height='36'></a>
+<a href='https://ko-fi.com/O5O64SQ4C' target='_blank' rel="noopener"><img src='https://cdn.ko-fi.com/cdn/kofi1.png?v=2' alt='buy ayusnix a coffee at ko-fi.com' border='0' height='36'></a>
+
+If you're in India, you can also use UPI for donations. My UPI address is `ayushnix@ybl`.
+
 # TODO (maybe?)
 
 - (responsive) image shortcodes
