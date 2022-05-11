@@ -134,14 +134,13 @@ probably a better reference.
 # TODO (maybe?)
 
 - (responsive) image shortcodes
-- sample favicon, opengraph content, and web manifest
 - run prettier on HTML and CSS before deployment
-- pagination
 - twitter and mastodon shortcodes
 - add optional support for cross posting and commenting on mastodon without using JS
 - add optional support for [giscus][9] and [loading mastodon comments][10]
 - add shortcode for asciinema
 - add shortcode for blockquote and citation
+- pagination
 
 [1]: https://kangae.ayushnix.com/
 [2]: https://www.getzola.org/
