@@ -83,9 +83,9 @@ keywords = [ "microblog", "linux", "devops", "openbsd" ]
 # manifest = "/site.webmanifest"
 
 # [optional] additional links that should be present in the navbar
-# `name` and `url` should be present for visibility
+# `name` and `url` should be present for visibility, `rel` is optional
 navbar = [
-  { name = "mastodon", url = "https://social.treehouse.systems/@ayushnix" },
+  { name = "mastodon", url = "https://social.treehouse.systems/@ayushnix", rel="me" },
   { name = "github", url = "https://github.com/ayushnix/kangae" }
 ]
 

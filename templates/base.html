@@ -109,7 +109,7 @@
           {%- if config.extra.navbar %}
             {%- for item in config.extra.navbar %}
               {%- if item.name and item.url %}
-                <li><a href="{{ item.url | safe }}">{{ item.name }}</a></li>
+                <li><a {% if item.rel %}rel="{{ item.rel }}"{% endif %} href="{{ item.url | safe }}">{{ item.name }}</a></li>
               {% endif -%}
             {% endfor -%}
           {% endif -%}
