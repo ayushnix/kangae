@@ -127,7 +127,7 @@ If you're in India, you can also use UPI for donations. My UPI address is `ayush
 
 I'm not really a web developer and I don't intend to be one either. However, I am interested in
 learning HTML and CSS to create lightweight textual websites. You may be interested in reading [my
-log about how I learned HTML and CSS][12]. However, this page is just an unorganized dump of my
+log about how I learned HTML and CSS][12]. However, that page is just an unorganized dump of my
 thoughts and isn't a polished blog post. [Seirdy's blog post on creating textual websites][13] is
 probably a better reference.
 
