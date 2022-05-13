@@ -24,14 +24,14 @@
 
 {% macro footer(page) %}
   {%- if config.extra.post_footer %}
-    {%- set foot = config.extra.post_footer %}
+    {%- set foot = config.extra.post_footer -%}
     <footer class="article-footer">
       <ul role="list">
         {%- if foot.share %}
           <li><a href="{{ page.permalink | safe }}">share</a></li>
         {% endif -%}
         {%- if foot.discuss_github and foot.github_url and page.title %}
-          {%- set discuss = "/discussions/new?category=general&title=" %}
+          {%- set discuss = "/discussions/new?category=general&title=" -%}
           <li>
             <a href="{{ foot.github_url | safe }}{{ discuss | safe }}{{ page.title | replace(from=" ", to="+") }}">discuss on github</a>
           </li>

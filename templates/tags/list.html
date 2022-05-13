@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
-{% block total_posts %}
-  {% if terms and terms | length == 1 %}
+{%- block total_posts %}
+  {%- if terms and terms | length == 1 %}
     <li>{{ terms | length }} tag and counting ...</li>
-  {% elif terms and terms | length > 1 %}
+  {%- elif terms and terms | length > 1 %}
     <li>{{ terms | length }} tags and counting ...</li>
-  {% endif %}
-{% endblock %}
+  {% endif -%}
+{% endblock -%}
 
-{% block main %}
+{%- block main %}
   <nav aria-labelledby="list-of-tags" class="tag-list-nav">
     <ul role="list">
       {% for tag in terms %}
@@ -16,4 +16,4 @@
       {% endfor %}
     </ul>
   </nav>
-{% endblock %}
+{% endblock -%}

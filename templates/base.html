@@ -7,58 +7,58 @@
       {{ head::basic_meta() }}
     {%- endblock -%}
 
-    {% block color_meta -%}
+    {%- block color_meta -%}
       {{ head::color_meta() }}
     {%- endblock %}
 
-    {% block ogtitle -%}
+    {%- block ogtitle -%}
       {{ head::ogtitle(tl="") }}
     {%- endblock -%}
 
-    {%- block opengraph_basic_meta %}
+    {%- block opengraph_basic_meta -%}
       {{ head::opengraph_basic_meta() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block opengraph_optional_meta %}
+    {%- block opengraph_optional_meta -%}
       {{ head::opengraph_optional_meta() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block favicon %}
+    {%- block favicon -%}
       {{ head::favicon() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block manifest %}
+    {%- block manifest -%}
       {{ head::manifest() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block feed %}
+    {%- block feed -%}
       {{ head::feed() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block style %}
+    {%- block style -%}
       {{ head::style() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block base_canonical %}
+    {%- block base_canonical -%}
       {{ head::base_canonical() }}
-    {% endblock -%}
+    {%- endblock -%}
 
-    {%- block title %}
+    {%- block title -%}
       {{ head::head_title(tl="") }}
-    {% endblock -%}
+    {%- endblock -%}
   </head>
   <body>
     <header class="primary-header">
-      {% if config.extra.avatar %}
+      {%- if config.extra.avatar %}
         <a href="{{ config.base_url | safe }}">
           <picture>
-            {% set meta = get_image_metadata(path=config.extra.avatar) %}
+            {%- set meta = get_image_metadata(path=config.extra.avatar) -%}
             <source media="(min-width: 48rem)" srcset="{{ get_url(path=config.extra.avatar) | safe }}" type="image/{{ meta.format | replace(from="svg", to="svg+xml") }}" height=128 width=128>
             <source srcset="{{ get_url(path=config.extra.avatar) | safe }}" type="image/{{ meta.format | replace(from="svg", to="svg+xml") }}" height=80 width=80>
             <img src="{{ get_url(path=config.extra.avatar) | safe }}" alt="the avatar image of {{ config.extra.author }}" height=128 width=128 class="avatar">
           </picture>
         </a>
-      {% endif %}
+      {% endif -%}
       <ul role="list">
       {%- block primary_header %}
         {%- if config.extra.author %}
@@ -72,40 +72,40 @@
             <li>{{ config.description }}</li>
           {% endif -%}
         {% endblock -%}
-        {% block total_posts %}
-          {% if section.pages and section.pages | length == 1 %}
+        {%- block total_posts %}
+          {%- if section.pages and section.pages | length == 1 %}
             <li>{{ section.pages | length }} post and counting ...</li>
-          {% elif section.pages and section.pages | length > 1 %}
+          {%- elif section.pages and section.pages | length > 1 %}
             <li>{{ section.pages | length }} posts and counting ...</li>
-          {% endif %}
-        {% endblock %}
+          {% endif -%}
+        {% endblock -%}
       {% endblock -%}
       </ul>
     </header>
     <nav class="primary-nav">
       <ul role="list">
-        {% block primary_nav %}
-          {% if config.taxonomies %}
-            {% for tax in config.taxonomies %}
+        {%- block primary_nav %}
+          {%- if config.taxonomies %}
+            {%- for tax in config.taxonomies %}
               <li><a href="{{ get_url(path=tax.name) }}">{{ tax.name }}</a></li>
-              {% if term.name and tax.feed and config.feed_filename == "atom.xml" %}
+              {%- if term.name and tax.feed and config.feed_filename == "atom.xml" %}
                 {% set atom_path = term.path ~ config.feed_filename %}
                 <li><a href="{{ get_url(path=atom_path) }}">atom feed for #{{ term.name }}</a></li>
-              {% elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
+              {%- elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
                 {% set rss_path = term.path ~ config.feed_filename %}
                 <li><a href="{{ get_url(path=rss_path) }}">rss feed for #{{ term.name }}</a></li>
-              {% elif term.name and tax.feed and config.feed_filename %}
+              {%- elif term.name and tax.feed and config.feed_filename %}
                 {% set feed_path = term.path ~ config.feed_filename %}
                 <li><a href="{{ get_url(path=feed_path) }}">feed for #{{ term.name }}</a></li>
-              {% elif config.generate_feed and config.feed_filename == "rss.xml" %}
+              {%- elif config.generate_feed and config.feed_filename == "rss.xml" %}
                 <li><a href="{{ get_url(path=config.feed_filename) }}">rss feed</a></li>
-              {% elif config.generate_feed and config.feed_filename == "atom.xml" %}
+              {%- elif config.generate_feed and config.feed_filename == "atom.xml" %}
                 <li><a href="{{ get_url(path=config.feed_filename) }}">atom feed</a></li>
-              {% elif config.generate_feed and config.feed_filename %}
+              {%- elif config.generate_feed and config.feed_filename %}
                 <li><a href="{{ get_url(path=config.feed_filename) }}">feed</a></li>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
+              {% endif -%}
+            {% endfor -%}
+          {% endif -%}
           {%- if config.extra.navbar %}
             {%- for item in config.extra.navbar %}
               {%- if item.name and item.url %}
@@ -113,7 +113,7 @@
               {% endif -%}
             {% endfor -%}
           {% endif -%}
-        {% endblock %}
+        {% endblock -%}
       </ul>
     </nav>
     <main>
@@ -130,8 +130,8 @@
               </time> {{ config.extra.author }}
             </li>
           {% endif -%}
-          {% set cl = config.extra.content_license %}
-          {% set sl = config.extra.source_license %}
+          {%- set cl = config.extra.content_license -%}
+          {%- set sl = config.extra.source_license -%}
           {%- if cl.spdx and cl.url %}
             <li>
               Content <a href="{{ cl.url | safe }}">{{ cl.spdx }}</a>

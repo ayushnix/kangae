@@ -11,131 +11,131 @@
 {% macro basic_meta() %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% if config.description %}
-      {% if page.content %}
+    {%- if config.description %}
+      {%- if page.content %}
         <meta name="description" content="{{ page.content | truncate(length=180) | striptags | safe }}">
-      {% else %}
+      {%- else %}
         <meta name="description" content="{{ config.description | striptags | safe }}">
-      {% endif %}
-    {% endif %}
-    {% if config.extra.keywords %}
+      {%- endif -%}
+    {% endif -%}
+    {%- if config.extra.keywords %}
       <meta name="keywords" content="{{ self::keywords() }}">
-    {% endif %}
+    {%- endif -%}
 {% endmacro %}
 
 {% macro color_meta() %}
     <meta name="color-scheme" content="light dark">
-    {% if config.extra.light_theme_color %}
+    {%- if config.extra.light_theme_color %}
       <meta name="theme-color" content="{{ config.extra.light_theme_color }}" media="(prefers-color-scheme: light)">
-    {% else %}
+    {%- else %}
       <meta name="theme-color" content="#f0f0f0" media="(prefers-color-scheme: light)">
-    {% endif %}
-    {% if config.extra.dark_theme_color %}
+    {%- endif -%}
+    {%- if config.extra.dark_theme_color %}
       <meta name="theme-color" content="{{ config.extra.dark_theme_color }}" media="(prefers-color-scheme: dark)">
-    {% else %}
+    {%- else %}
       <meta name="theme-color" content="#282c34" media="(prefers-color-scheme: dark)">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
 
 {% macro opengraph_basic_meta() %}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ current_url | safe }}">
-    {% if config.extra.opengraph.img %}
+    {%- if config.extra.opengraph.img %}
       <meta property="og:image" content="{{ get_url(path=config.extra.opengraph.img) }}">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
 
 {% macro opengraph_optional_meta() %}
-    {% if config.title %}
+    {%- if config.title %}
       <meta property="og:site_name" content="{{ config.title }}">
-    {% endif %}
-    {% if config.description %}
-      {% if page.content %}
+    {% endif -%}
+    {%- if config.description %}
+      {%- if page.content %}
         <meta property="og:description" content="{{ page.content | truncate(length=180) | striptags |safe }}">
-      {% else %}
+      {%- else %}
         <meta property="og:description" content="{{ config.description | striptags | safe }}">
-      {% endif %}
-    {% endif %}
+      {% endif -%}
+    {% endif -%}
     {# https://github.com/getzola/zola/issues/1161 #}
-    {% if config.extra.opengraph.img %}
+    {%- if config.extra.opengraph.img %}
       {% set ogimgmeta = get_image_metadata(path=config.extra.opengraph.img) %}
       <meta property="og:image:type" content="image/{{ ogimgmeta.format | replace(from="svg", to="svg+xml") }}">
       <meta property="og:image:width" content="{{ ogimgmeta.width }}">
       <meta property="og:image:height" content="{{ ogimgmeta.height }}">
-      {% if config.extra.opengraph.alt %}
+      {%- if config.extra.opengraph.alt %}
         <meta property="og:image:alt" content="{{ config.extra.opengraph.alt }}">
-      {% endif %}
-    {% endif %}
+      {% endif -%}
+    {% endif -%}
 {% endmacro %}
 
 {% macro favicon() %}
-    {% if config.extra.favicon.png %}
+    {%- if config.extra.favicon.png %}
       <link rel="icon" href="{{ get_url(path=config.extra.favicon.png) }}" type="image/png">
-    {% endif %}
-    {% if config.extra.favicon.svg %}
+    {% endif -%}
+    {%- if config.extra.favicon.svg %}
       <link rel="icon" href="{{ get_url(path=config.extra.favicon.svg) }}" type="image/svg+xml">
-    {% endif %}
-    {% if config.extra.favicon.apple %}
+    {% endif -%}
+    {%- if config.extra.favicon.apple %}
       <link rel="apple-touch-icon" href="{{ get_url(path=config.extra.favicon.apple) }}">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
 
 {% macro manifest() %}
-    {% if config.extra.manifest %}
+    {%- if config.extra.manifest %}
       <link rel="manifest" href="{{ get_url(path=config.extra.manifest, cachebust=true) }}">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
 
 {# can't think of a way to determine if the custom feed is atom or rss #}
 {# in this case, I'll assume that the custom feed is an atom feed #}
 {# feel free to raise a PR if you know how to fix this #}
 {% macro feed() %}
-  {% if config.title %}
-    {% for tax in config.taxonomies %}
-      {% if term.name and tax.feed and config.feed_filename == "atom.xml" %}
-        {% set atom_path = term.path ~ config.feed_filename %}
+  {%- if config.title %}
+    {%- for tax in config.taxonomies %}
+      {%- if term.name and tax.feed and config.feed_filename == "atom.xml" %}
+        {%- set atom_path = term.path ~ config.feed_filename -%}
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }} - #{{ term.name }}" href="{{ atom_path | safe }}">
-      {% elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
-        {% set rss_path = term.path ~ config.feed_filename %}
+      {%- elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
+        {%- set rss_path = term.path ~ config.feed_filename -%}
         <link rel="alternate" type="application/rss+xml" title="{{ config.title }} - #{{ term.name }}" href="{{ rss_path | safe }}">
-      {% elif term.name and tax.feed and config.feed_filename %}
+      {%- elif term.name and tax.feed and config.feed_filename %}
         {% set feed_path = term.path ~ config.feed_filename %}
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }} - #{{ term.name }}" href="{{ feed_path | safe }}">
-      {% elif config.generate_feed and config.feed_filename == "rss.xml" %}
+      {%- elif config.generate_feed and config.feed_filename == "rss.xml" %}
         <link rel="alternate" type="application/rss+xml" title="{{ config.title }}" href="rss.xml">
-      {% elif config.generate_feed and config.feed_filename == "atom.xml" %}
+      {%- elif config.generate_feed and config.feed_filename == "atom.xml" %}
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="atom.xml">
-      {% elif config.generate_feed and config.feed_filename %}
+      {%- elif config.generate_feed and config.feed_filename %}
         <link rel="alternate" type="application/atom+xml" title="{{ config.title }}" href="{{ config.feed_filename }}">
-      {% endif %}
-    {% endfor %}
+      {% endif -%}
+    {% endfor -%}
   {% else %}
-    {% for tax in config.taxonomies %}
-      {% if term.name and tax.feed and config.feed_filename == "atom.xml" %}
-        {% set atom_path = term.path ~ config.feed_filename %}
+    {%- for tax in config.taxonomies %}
+      {%- if term.name and tax.feed and config.feed_filename == "atom.xml" %}
+        {%- set atom_path = term.path ~ config.feed_filename -%}
         <link rel="alternate" type="application/atom+xml" href="{{ atom_path | safe }}">
-      {% elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
-        {% set rss_path = term.path ~ config.feed_filename %}
+      {%- elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
+        {%- set rss_path = term.path ~ config.feed_filename -%}
         <link rel="alternate" type="application/rss+xml" href="{{ rss_path | safe }}">
-      {% elif term.name and tax.feed and config.feed_filename %}
-        {% set feed_path = term.path ~ config.feed_filename %}
+      {%- elif term.name and tax.feed and config.feed_filename %}
+        {%- set feed_path = term.path ~ config.feed_filename -%}
         <link rel="alternate" type="application/atom+xml" href="{{ feed_path | safe }}">
-      {% elif config.generate_feed and config.feed_filename == "rss.xml" %}
+      {%- elif config.generate_feed and config.feed_filename == "rss.xml" %}
         <link rel="alternate" type="application/rss+xml" href="rss.xml">
-      {% elif config.generate_feed and config.feed_filename == "atom.xml" %}
+      {%- elif config.generate_feed and config.feed_filename == "atom.xml" %}
         <link rel="alternate" type="application/atom+xml" href="atom.xml">
-      {% elif config.generate_feed and config.feed_filename %}
+      {%- elif config.generate_feed and config.feed_filename %}
         <link rel="alternate" type="application/atom+xml" href="{{ config.feed_filename }}">
-      {% endif %}
-    {% endfor %}
-  {% endif %}
+      {% endif -%}
+    {% endfor -%}
+  {% endif -%}
 {% endmacro %}
 
 {% macro style() %}
     <link rel="stylesheet" href="{{ get_url(path="css/style.css", cachebust=true) }}">
-    {% if config.extra.custom_css %}
+    {%- if config.extra.custom_css %}
       <link rel="stylesheet" href="{{ get_url(path=config.extra.custom_css, cachebust=true) }}">
-    {% endif %}
+    {% endif -%}
 {% endmacro %}
 
 {% macro base_canonical() %}
@@ -144,31 +144,31 @@
 {% endmacro %}
 
 {% macro title() %}
-  {%- if page.title and config.extra.username -%}
+  {%- if page.title and config.extra.username %}
     {{ page.title }} by {{ config.extra.username }}
-  {%- elif page.title and config.extra.author -%}
+  {%- elif page.title and config.extra.author %}
     {{ page.title }} by {{ config.extra.author }}
-  {%- elif page.title -%}
+  {%- elif page.title %}
     {{ page.title }}
-  {%- elif config.title -%}
+  {%- elif config.title %}
     {{ config.title }}
-  {%- else -%}
+  {%- else %}
     microblog
-  {%- endif -%}
+  {% endif -%}
 {% endmacro %}
 
 {% macro ogtitle(tl) %}
-  {% if tl %}
+  {%- if tl %}
     <meta property="og:title" content="{{ tl }}">
-  {% else %}
+  {%- else %}
     <meta property="og:title" content="{{ self::title() }}">
-  {% endif %}
+  {% endif -%}
 {% endmacro %}
 
 {% macro head_title(tl) %}
-  {% if tl %}
+  {%- if tl %}
     <title>{{ tl }}</title>
-  {% else %}
+  {%- else %}
     <title>{{ self::title() }}</title>
-  {% endif %}
+  {% endif -%}
 {% endmacro %}
