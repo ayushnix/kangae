@@ -28,7 +28,7 @@
   --space-2xl: clamp(3.50rem, calc(3.17rem + 1.67vw), 4.50rem);
   --space-3xl: clamp(5.25rem, calc(4.75rem + 2.50vw), 6.75rem);
 
-  --width: 65ch;
+  --width: 70ch;
   --body-line-height: 1.5;
   --head-line-height: 1.3;
 }
