@@ -179,6 +179,7 @@ article > * + * {
 .article-header > ul[role="list"] {
   display: inline-flex;
   flex-flow: row wrap;
+  justify-content: flex-end;
   gap: var(--space-2xs);
 }
 
