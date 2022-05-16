@@ -206,7 +206,6 @@ article > * + * {
 
 .post-title::before {
   content: " · ";
-
 }
 
 /* show the title on devices which are at least as wide as the iPad Mini */
@@ -250,6 +249,7 @@ pre {
 }
 
 blockquote {
+  margin-inline-start: var(--space-l);
   padding: var(--space-2xs);
   border-inline-start: var(--step-s4) solid var(--fg-border);
 }
