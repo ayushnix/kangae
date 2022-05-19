@@ -86,7 +86,7 @@ keywords = [ "microblog", "linux", "devops", "openbsd" ]
 # `name` and `url` should be present for visibility, `rel` is optional
 navbar = [
   { name = "mastodon", url = "https://social.treehouse.systems/@ayushnix", rel="me" },
-  { name = "github", url = "https://github.com/ayushnix/kangae" }
+  { name = "github", url = "https://github.com/ayushnix/kangae", rel="me" }
 ]
 
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta/name/theme-color
