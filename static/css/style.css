@@ -64,20 +64,22 @@ html {
 
 /* reduce distraction from text by removing underlines from hyperlinks */
 /* rely on color to distinguish hyperlinks */
+/* the order of pseudo classes should follow the LVHA order */
+/* :link, :visited, :hover, :active */
 a {
   color: var(--fg-href);
   text-decoration: none;
 }
 
+/* subdue the color of visited hyperlinks */
+a:visited {
+  color: var(--fg-color);
+}
+
 /* underline hyperlinks on hover and increase their underline offset */
 a:hover {
   text-decoration: underline;
-  text-underline-offset: var(--step-s5);
-}
-
-/* change the color of visited hyperlinks */
-a:visited {
-  color: var(--fg-href-visited);
+  text-underline-offset: var(--space-3xs);
 }
 
 /* if the role of a list is explicitly defined, it isn't being used as a list */
