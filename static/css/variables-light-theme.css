@@ -2,8 +2,10 @@
 
 :root {
   --fg-color: #282828;
-  --bg-color: #f0f0f0;
-  --fg-href: #0000c0;
+  --bg-color: #f8f8f8;
+  --fg-href: #001087;
+  /* deliberaty choose a color with a lesser contrast */
+  /* APCA contrast value of 83.77 against bg-color */
   --fg-border: #505050;
   --bg-mark: #f9ff00;
   --fg-mark: #282828;
