@@ -136,18 +136,27 @@
           {%- set cl = config.extra.content_license -%}
           {%- set sl = config.extra.source_license -%}
           {%- if cl.spdx and cl.url %}
+            {%- if cl.url is starting_with("https://") and cl.url is not starting_with(config.base_url) %}
+              {%- set newtab_license = true %}
+            {% endif -%}
             <li>
-              Content <a href="{{ cl.url | safe }}">{{ cl.spdx }}</a>
+              Content <a href="{{ cl.url | safe }}" {% if newtab_license %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ cl.spdx }}</a>
             </li>
+          {% endif -%}
+          {%- if sl.src_url and sl.src_url is starting_with("https://") and sl.src_url is not starting_with(config.base_url) %}
+            {%- set newtab_srcurl = true %}
+          {% endif -%}
+          {%- if sl.url and sl.url is starting_with("https://") and sl.url is not starting_with(config.base_url) %}
+            {%- set newtab_srclicense = true %}
           {% endif -%}
           {%- if sl.spdx and sl.url and sl.src_url %}
             <li>
-              <a href="{{ sl.src_url | safe }}">Source Code</a>
-              <a href="{{ sl.url | safe }}">{{ sl.spdx }}</a>
+              <a href="{{ sl.src_url | safe }}"{% if newtab_srcurl %} target="_blank" rel="noopener noreferrer"{% endif %}>Source Code</a>
+              <a href="{{ sl.url | safe }}"{% if newtab_srclicense %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ sl.spdx }}</a>
             </li>
           {%- elif sl.spdx and sl.url %}
             <li>
-              Source Code <a href="{{ sl.url | safe }}">{{ sl.spdx }}</a>
+              Source Code <a href="{{ sl.url | safe }}"{% if newtab_srclicense %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ sl.spdx }}</a>
             </li>
           {% endif -%}
           {%- block extra_site_footer %}
