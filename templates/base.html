@@ -109,7 +109,10 @@
           {%- if config.extra.navbar %}
             {%- for item in config.extra.navbar %}
               {%- if item.name and item.url %}
-                <li><a {% if item.rel %}rel="{{ item.rel }}"{% endif %} href="{{ item.url | safe }}">{{ item.name }}</a></li>
+                {%- if item.url is starting_with("https://") and item.url is not starting_with(config.base_url) %}
+                  {%- set newtab_nav = true %}
+                {% endif -%}
+                <li><a href="{{ item.url | safe }}"{% if newtab_nav %} target="_blank"{% endif %}{% if item.rel or newtab_nav %} rel="{% if item.rel and not newtab_nav %}me{% elif item.rel and newtab_nav %}me {% endif %}{% if newtab_nav %}noopener noreferrer{% endif %}"{% endif %}>{{ item.name }}</a></li>
               {% endif -%}
             {% endfor -%}
           {% endif -%}
