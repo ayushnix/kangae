@@ -158,7 +158,7 @@ h1 {
 
 .primary-footer {
   font-size: var(--step-s1);
-  border-block-start: 0.1em dotted var(--fg-border);
+  border-block-start: 0.1rem dotted var(--fg-border);
 }
 
 /* add a hash symbol before the taxonomy tag links */
@@ -191,7 +191,7 @@ article > * + * {
   display: flex;
   gap: var(--space-2xs);
   justify-content: space-between;
-  border-block-end: 0.1em dotted var(--fg-border);
+  border-block-end: 0.1rem dotted var(--fg-border);
 }
 
 /* borrowed from the html5-boilerplate css file on github */
@@ -241,7 +241,7 @@ article > * + * {
 
 pre {
   padding: var(--space-2xs);
-  border: 0.1em solid var(--fg-border);
+  border: 0.1rem solid var(--fg-border);
   border-radius: var(--step-s5);
 }
 
@@ -271,19 +271,19 @@ blockquote {
 mark {
   /* plays well with at least 1.5 line-height or more */
   padding-inline: var(--space-3xs);
-  padding-block: 0.1em;
+  padding-block: 0.1rem;
   color: var(--fg-mark);
   background: var(--bg-mark);
   border-radius: var(--step-s5);
 }
 
 kbd {
-  border-inline: 0.1em solid var(--fg-border);
-  border-block-start: 0.1em solid var(--fg-border);
-  border-block-end: 0.2em solid var(--fg-border);
+  border-inline: 0.1rem solid var(--fg-border);
+  border-block-start: 0.1rem solid var(--fg-border);
+  border-block-end: 0.2rem solid var(--fg-border);
   border-radius: var(--step-s5);
   padding-inline: var(--space-3xs);
-  padding-block: 0.1em;
+  padding-block: 0.1rem;
 }
 
 /* -------------------------------------------------------------------------- */
