@@ -141,6 +141,8 @@ probably a better reference.
 - add shortcode for asciinema
 - add shortcode for blockquote and citation
 - pagination
+- light and dark mode switch
+- content tabs
 
 [1]: https://kangae.ayushnix.com/
 [2]: https://www.getzola.org/
