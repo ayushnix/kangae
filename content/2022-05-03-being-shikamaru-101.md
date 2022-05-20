@@ -11,7 +11,7 @@ lazy guy but not today, because now I'm responsible for your lives too.
 How many times do I have to tell you? The first move is always a feint. It's the most basic thing to
 land a hit with the second move.
 
-```css
+```css,linenos
 html {
   box-sizing: border-box;
 }
