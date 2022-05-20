@@ -39,6 +39,8 @@ html {
   /* prevent layout shift when switching between pages with and without a
    * scrollbar */
   scrollbar-gutter: stable both-edges;
+  /* fallback for safari - remove if it starts supporting scrollbar-gutter */
+  overflow-y: scroll;
 }
 
 /* inherit the border-box model in all elements */
