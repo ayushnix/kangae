@@ -245,6 +245,38 @@ pre {
   border-radius: var(--step-s5);
 }
 
+/* code blocks inside pre should be a block otherwise it doesn't work well when
+ * text overflows inside code */
+pre > code {
+  display: block;
+}
+
+/* show the name of the programming language inside pre */
+pre[data-lang]::before {
+  display: block;
+  content: attr(data-lang);
+  text-decoration: underline var(--fg-border) solid;
+  text-underline-offset: var(--space-3xs);
+  text-decoration-thickness: 0.1rem;
+  text-transform: uppercase;
+  padding-block-end: var(--space-2xs);
+}
+
+/* add space after line numbers and don't select the line numbers for copying */
+pre[data-linenos] table tbody tr td:first-child {
+  padding-inline-end: var(--space-s);
+  user-select: none;
+}
+
+pre[data-linenos] table {
+  /* if we set table width to 100% and if text overflows, the space separation
+   * between cells is removed */
+  /* width: 100%; */
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+}
+
 .unknown-page-emoticon {
   font-size: var(--step-x3);
   padding: var(--space-2xs);
