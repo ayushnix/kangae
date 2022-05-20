@@ -107,6 +107,38 @@ emoticon itself.
 This shortcode can also be used for any other ASCII emoticon that can fit in an inline paragraph.
 This includes western emoticons such as `;)` and combination emoticons such as `<(^_^<)`.
 
+### Quotes
+
+You can add quotes in your microblog posts using
+
+```
+{% quote(author="Nara Shikamaru") %}
+You would think just this once, when it was life or death, I could pull through.
+{% end %}
+```
+
+This is the most basic form of improvement in writing quotes over simply using `>` in markdown.
+
+If you want to mention the name of the source from where the quote has been taken, such as the name
+of the book or a movie, you can use
+
+```
+{% quote(citation="Mass Effect 3", author="Javik") %}
+Stand in the ashes of a trillion dead souls, and ask the ghosts if honor matters. The silence is your answer.
+{% end %}
+```
+
+A `citeurl` can also be given as an argument to this shortcode to provide the actual URL from where
+the source is borrowed.
+
+```
+{% quote(author="Edward Snowden", citeurl="https://old.reddit.com/r/IAmA/comments/36ru89/just_days_left_to_kill_mass_surveillance_under/crglgh2/")%}
+Arguing that you don't care about the right to privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say.
+{% end %}
+```
+
+A live preview of these how these shortcodes look like can be found on [this blog post][14].
+
 ## Optional Features
 
 kangae includes some optional features that aren't enabled by default
@@ -157,3 +189,4 @@ probably a better reference.
 [11]: https://github.com/ayushnix/kangae/blob/master/static/css/style-external-links.css
 [12]: https://wiki.ayushnix.com/frontend/creating-a-website/
 [13]: https://seirdy.one/2020/11/23/website-best-practices.html
+[14]: https://kangae.ayushnix.com/being-shikamaru-102/
