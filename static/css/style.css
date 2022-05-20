@@ -256,6 +256,12 @@ blockquote {
   border-inline-start: var(--step-s4) solid var(--fg-border);
 }
 
+.figquote {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
 :is(ul, ol) {
   padding-inline: var(--space-l);
 }
