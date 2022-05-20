@@ -1,0 +1,23 @@
+{%- if citation and author %}
+<figure class="figquote">
+  <blockquote{% if citeurl %} cite="{{ citeurl | safe }}"{% endif %}>
+    <p>{{ body }}</p>
+    <br>
+    <p class="author">— {{ author }}</p>
+  </blockquote>
+  <figcaption><cite>{{ citation }}</cite></figcaption>
+</figure>
+{%- elif citation %}
+<figure class="figquote">
+  <blockquote{% if citeurl %} cite="{{ citeurl | safe }}"{% endif %}>
+    <p>{{ body }}</p>
+  </blockquote>
+  <figcaption><cite>{{ citation }}</cite></figcaption>
+</figure>
+{%- elif author %}
+<blockquote{% if citeurl %} cite="{{ citeurl | safe }}"{% endif %}>
+  <p>{{ body }}</p>
+  <br>
+  <p class="author">— {{ author }}</p>
+</blockquote>
+{% endif -%}
