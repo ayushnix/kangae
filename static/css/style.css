@@ -232,6 +232,22 @@ article > * + * {
   margin-block: var(--space-xl);
 }
 
+/* code blocks inside pre should be a block otherwise it doesn't work well when
+ * text overflows inside code */
+pre > code {
+  display: block;
+}
+
+code[role="img"] {
+  display: inline-block;
+}
+
+.figquote {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
 /* -------------------------------------------------------------------------- */
 
 /* don't style h2 to h6 because it's not needed on this website */
@@ -243,12 +259,6 @@ pre {
   padding: var(--space-2xs);
   border: 0.1rem solid var(--fg-border);
   border-radius: var(--step-s5);
-}
-
-/* code blocks inside pre should be a block otherwise it doesn't work well when
- * text overflows inside code */
-pre > code {
-  display: block;
 }
 
 /* show the name of the programming language inside pre */
@@ -288,12 +298,6 @@ blockquote {
   margin-inline-start: var(--space-l);
   padding: var(--space-2xs);
   border-inline-start: var(--step-s4) solid var(--fg-border);
-}
-
-.figquote {
-  display: flex;
-  flex-direction: column;
-  place-items: center;
 }
 
 :is(ul, ol) {
