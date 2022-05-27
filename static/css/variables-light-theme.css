@@ -3,7 +3,7 @@
 :root {
   --fg-color: #282828;
   --bg-color: #f8f8f8;
-  --fg-href: #001087;
+  --fg-href: #0000c0;
   /* deliberaty choose a color with a lesser contrast */
   /* APCA contrast value of 83.77 against bg-color */
   --fg-border: #505050;
