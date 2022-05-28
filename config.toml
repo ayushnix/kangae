@@ -71,7 +71,7 @@ author = "Nara Shikamaru"
 username = "shikamaru"
 
 # [optional] your 128x128 avatar, preferably svg
-avatar = "/images/shikamaru_avatar.webp"
+avatar = "images/shikamaru_avatar.webp"
 
 # [optional] the keywords which highlight the type of content on your microblog
 keywords = [ "microblog", "linux", "devops", "openbsd" ]
