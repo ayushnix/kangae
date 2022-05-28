@@ -91,16 +91,14 @@ ul[role="list"] {
 }
 
 /* prevent overflow of possibly long lines */
-p,
-li,
-h1 {
+:is(p, li, h1) {
   overflow-wrap: break-word;
 }
 
-img,
-video {
-  /* never render images wider than their containing element */
+:is(img, video) {
+  /* never render images/videos wider than their containing element */
   max-inline-size: 100%;
+  height: auto;
   /* preserve the aspect ratio of the image */
   block-size: auto;
 }
@@ -135,6 +133,11 @@ body {
   flex-flow: row wrap;
   justify-content: center;
   gap: var(--space-xs);
+}
+
+:is(img, video) {
+  /* make images/videos blocks rather than inline elements */
+  display: block;
 }
 
 .avatar {
