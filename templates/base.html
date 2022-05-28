@@ -81,6 +81,8 @@
         {% endblock -%}
       {% endblock -%}
       </ul>
+      {%- block extra_site_header %}
+      {% endblock -%}
     </header>
     <nav class="primary-nav">
       <ul role="list">
@@ -159,10 +161,10 @@
               Source Code <a href="{{ sl.url | safe }}"{% if newtab_srclicense %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ sl.spdx }}</a>
             </li>
           {% endif -%}
-          {%- block extra_site_footer %}
-          {% endblock -%}
         {% endblock -%}
       </ul>
+      {%- block extra_site_footer %}
+      {% endblock -%}
     </footer>
   </body>
 </html>
