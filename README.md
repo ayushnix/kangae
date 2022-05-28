@@ -132,7 +132,7 @@ A `citeurl` can also be given as an argument to this shortcode to provide the ac
 the source is borrowed.
 
 ```
-{% quote(author="Edward Snowden", citeurl="https://old.reddit.com/r/IAmA/comments/36ru89/just_days_left_to_kill_mass_surveillance_under/crglgh2/")%}
+{% quote(author="Edward Snowden", citeurl="https://old.reddit.com/r/IAmA/comments/36ru89/just_days_left_to_kill_mass_surveillance_under/crglgh2/") %}
 Arguing that you don't care about the right to privacy because you have nothing to hide is no different than saying you don't care about free speech because you have nothing to say.
 {% end %}
 ```
