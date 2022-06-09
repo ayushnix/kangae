@@ -243,6 +243,7 @@ pre > code {
 
 code[role="img"] {
   display: inline-block;
+  vertical-align: middle;
 }
 
 .figquote {
