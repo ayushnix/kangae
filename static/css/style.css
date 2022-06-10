@@ -36,11 +36,16 @@
 html {
   /* use the border-box box model instead of the browser default content-box */
   box-sizing: border-box;
-  /* prevent layout shift when switching between pages with and without a
-   * scrollbar */
-  scrollbar-gutter: stable both-edges;
   /* fallback for safari - remove if it starts supporting scrollbar-gutter */
   overflow-y: scroll;
+}
+
+/* if a web browser supports `scrollbar-gutter`, use that instead */
+@supports (scrollbar-gutter: stable both-edges) {
+  html {
+    overflow-y: auto;
+    scrollbar-gutter: stable both-edges;
+  }
 }
 
 /* inherit the border-box model in all elements */
