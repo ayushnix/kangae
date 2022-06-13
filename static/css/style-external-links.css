@@ -8,4 +8,5 @@ a[href]:not(:where(
 ))::after {
   font-size: var(--step-s1);
   content: " ↗";
+  vertical-align: middle;
 }
