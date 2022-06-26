@@ -1,10 +1,10 @@
-/* one dark colorscheme */
+/* modus vivendi colorscheme */
 
 :root {
-  --fg-color: #abb2bf;
-  --bg-color: #282c34;
-  --fg-href: #61afef;
-  --fg-border: #828997;
-  --bg-mark: #e5c07b;
-  --fg-mark: #282c34;
+  --fg-color: #e0e6f0;
+  --bg-color: #323232;
+  --fg-href: #f2e4c4;
+  --fg-border: #969696;
+  --bg-mark: #dfdfb0;
+  --fg-mark: #100f10;
 }
