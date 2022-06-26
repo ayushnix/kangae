@@ -175,6 +175,7 @@ probably a better reference.
 - pagination
 - light and dark mode switch
 - content tabs
+- microdata and microformats2
 
 [1]: https://kangae.ayushnix.com/
 [2]: https://www.getzola.org/
