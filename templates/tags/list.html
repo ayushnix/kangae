@@ -2,9 +2,9 @@
 
 {%- block total_posts %}
   {%- if terms and terms | length == 1 %}
-    <li>{{ terms | length }} tag and counting ...</li>
+    <li role="listitem">{{ terms | length }} tag and counting ...</li>
   {%- elif terms and terms | length > 1 %}
-    <li>{{ terms | length }} tags and counting ...</li>
+    <li role="listitem">{{ terms | length }} tags and counting ...</li>
   {% endif -%}
 {% endblock -%}
 
@@ -12,7 +12,7 @@
   <nav aria-labelledby="list-of-tags" class="tag-list-nav">
     <ul role="list">
       {% for tag in terms %}
-        <li><a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{ tag.name }}</a><sup class="tag-sup">{{ tag.pages | length }}</sup></li>
+        <li role="listitem"><a href="{{ get_taxonomy_url(kind="tags", name=tag.name) }}">{{ tag.name }}</a><sup class="tag-sup">{{ tag.pages | length }}</sup></li>
       {% endfor %}
     </ul>
   </nav>

@@ -62,21 +62,21 @@
       <ul role="list">
       {%- block primary_header %}
         {%- if config.extra.author %}
-          <li><h1>{{ config.extra.author }}</h1></li>
+          <li role="listitem"><h1>{{ config.extra.author }}</h1></li>
         {% endif -%}
         {%- if config.extra.username %}
-          <li><a href="{{ config.base_url | safe }}">@{{ config.extra.username }}</a></li>
+          <li role="listitem"><a href="{{ config.base_url | safe }}">@{{ config.extra.username }}</a></li>
         {% endif -%}
         {%- block header_description %}
           {%- if config.description %}
-            <li>{{ config.description }}</li>
+            <li role="listitem">{{ config.description }}</li>
           {% endif -%}
         {% endblock -%}
         {%- block total_posts %}
           {%- if section.pages and section.pages | length == 1 %}
-            <li>{{ section.pages | length }} post and counting ...</li>
+            <li role="listitem">{{ section.pages | length }} post and counting ...</li>
           {%- elif section.pages and section.pages | length > 1 %}
-            <li>{{ section.pages | length }} posts and counting ...</li>
+            <li role="listitem">{{ section.pages | length }} posts and counting ...</li>
           {% endif -%}
         {% endblock -%}
       {% endblock -%}
@@ -89,22 +89,22 @@
         {%- block primary_nav %}
           {%- if config.taxonomies %}
             {%- for tax in config.taxonomies %}
-              <li><a href="{{ get_url(path=tax.name) }}">{{ tax.name }}</a></li>
+              <li role="listitem"><a href="{{ get_url(path=tax.name) }}">{{ tax.name }}</a></li>
               {%- if term.name and tax.feed and config.feed_filename == "atom.xml" %}
                 {% set atom_path = term.path ~ config.feed_filename %}
-                <li><a href="{{ get_url(path=atom_path) }}">atom feed for #{{ term.name }}</a></li>
+                <li role="listitem"><a href="{{ get_url(path=atom_path) }}">atom feed for #{{ term.name }}</a></li>
               {%- elif term.name and tax.feed and config.feed_filename == "rss.xml" %}
                 {% set rss_path = term.path ~ config.feed_filename %}
-                <li><a href="{{ get_url(path=rss_path) }}">rss feed for #{{ term.name }}</a></li>
+                <li role="listitem"><a href="{{ get_url(path=rss_path) }}">rss feed for #{{ term.name }}</a></li>
               {%- elif term.name and tax.feed and config.feed_filename %}
                 {% set feed_path = term.path ~ config.feed_filename %}
-                <li><a href="{{ get_url(path=feed_path) }}">feed for #{{ term.name }}</a></li>
+                <li role="listitem"><a href="{{ get_url(path=feed_path) }}">feed for #{{ term.name }}</a></li>
               {%- elif config.generate_feed and config.feed_filename == "rss.xml" %}
-                <li><a href="{{ get_url(path=config.feed_filename) }}">rss feed</a></li>
+                <li role="listitem"><a href="{{ get_url(path=config.feed_filename) }}">rss feed</a></li>
               {%- elif config.generate_feed and config.feed_filename == "atom.xml" %}
-                <li><a href="{{ get_url(path=config.feed_filename) }}">atom feed</a></li>
+                <li role="listitem"><a href="{{ get_url(path=config.feed_filename) }}">atom feed</a></li>
               {%- elif config.generate_feed and config.feed_filename %}
-                <li><a href="{{ get_url(path=config.feed_filename) }}">feed</a></li>
+                <li role="listitem"><a href="{{ get_url(path=config.feed_filename) }}">feed</a></li>
               {% endif -%}
             {% endfor -%}
           {% endif -%}
@@ -114,7 +114,7 @@
                 {%- if item.url is starting_with("https://") and item.url is not starting_with(config.base_url) %}
                   {%- set newtab_nav = true %}
                 {% endif -%}
-                <li><a href="{{ item.url | safe }}"{% if newtab_nav %} target="_blank"{% endif %}{% if item.rel or newtab_nav %} rel="{% if item.rel and not newtab_nav %}me{% elif item.rel and newtab_nav %}me {% endif %}{% if newtab_nav %}noopener noreferrer{% endif %}"{% endif %}>{{ item.name }}</a></li>
+                <li role="listitem"><a href="{{ item.url | safe }}"{% if newtab_nav %} target="_blank"{% endif %}{% if item.rel or newtab_nav %} rel="{% if item.rel and not newtab_nav %}me{% elif item.rel and newtab_nav %}me {% endif %}{% if newtab_nav %}noopener noreferrer{% endif %}"{% endif %}>{{ item.name }}</a></li>
               {% endif -%}
             {% endfor -%}
           {% endif -%}
@@ -129,7 +129,7 @@
       <ul role="list">
         {%- block site_footer %}
           {%- if config.extra.author %}
-            <li>&copy;
+            <li role="listitem">&copy;
               <time datetime="{{ now() | date(format="%Y") }}">
                 {{ now() | date(format="%Y") }}
               </time> {{ config.extra.author }}
@@ -141,7 +141,7 @@
             {%- if cl.url is starting_with("https://") and cl.url is not starting_with(config.base_url) %}
               {%- set newtab_license = true %}
             {% endif -%}
-            <li>
+            <li role="listitem">
               Content <a href="{{ cl.url | safe }}" {% if newtab_license %}target="_blank" rel="noopener noreferrer"{% endif %}>{{ cl.spdx }}</a>
             </li>
           {% endif -%}
@@ -152,12 +152,12 @@
             {%- set newtab_srclicense = true %}
           {% endif -%}
           {%- if sl.spdx and sl.url and sl.src_url %}
-            <li>
+            <li role="listitem">
               <a href="{{ sl.src_url | safe }}"{% if newtab_srcurl %} target="_blank" rel="noopener noreferrer"{% endif %}>Source Code</a>
               <a href="{{ sl.url | safe }}"{% if newtab_srclicense %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ sl.spdx }}</a>
             </li>
           {%- elif sl.spdx and sl.url %}
-            <li>
+            <li role="listitem">
               Source Code <a href="{{ sl.url | safe }}"{% if newtab_srclicense %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ sl.spdx }}</a>
             </li>
           {% endif -%}

@@ -11,7 +11,7 @@
     {%- if page.taxonomies and page.taxonomies.tags %}
       <ul role="list">
       {%- for tag in page.taxonomies.tags %}
-        <li><a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></li>
+        <li role="listitem"><a class="tag" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a></li>
       {% endfor -%}
       </ul>
     {% endif -%}
@@ -28,11 +28,11 @@
     <footer class="article-footer">
       <ul role="list">
         {%- if foot.share %}
-          <li><a href="{{ page.permalink | safe }}">share</a></li>
+          <li role="listitem"><a href="{{ page.permalink | safe }}">share</a></li>
         {% endif -%}
         {%- if foot.discuss_github and foot.github_url and page.title %}
           {%- set discuss = "/discussions/new?category=general&title=" -%}
-          <li>
+          <li role="listitem">
             <a href="{{ foot.github_url | safe }}{{ discuss | safe }}{{ page.title | replace(from=" ", to="+") }}" target="_blank" rel="noopener noreferrer">discuss on github</a>
           </li>
         {% endif -%}
@@ -41,7 +41,7 @@
             {%- if link.url and link.url is starting_with("https://") and link.url is not starting_with(config.base_url) %}
               {%- set link_url = true %}
             {% endif -%}
-            <li><a href="{{ link.url | safe }}"{% if link_url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.name }}</a></li>
+            <li role="listitem"><a href="{{ link.url | safe }}"{% if link_url %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.name }}</a></li>
           {% endfor -%}
         {% endif -%}
       </ul>
