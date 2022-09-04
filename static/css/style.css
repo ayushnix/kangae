@@ -106,6 +106,7 @@ ul[role="list"] {
   height: auto;
   /* preserve the aspect ratio of the image */
   block-size: auto;
+  margin-inline: auto;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -307,6 +308,10 @@ blockquote {
   margin-inline-start: var(--space-l);
   padding: var(--space-2xs);
   border-inline-start: var(--step-s4) solid var(--fg-border);
+}
+
+figcaption {
+  text-align: center;
 }
 
 :is(ul, ol) {
