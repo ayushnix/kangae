@@ -1,5 +1,26 @@
-@import url("variables-light-theme.css") (prefers-color-scheme: light);
-@import url("variables-dark-theme.css") (prefers-color-scheme: dark);
+/*@import url("variables-light-theme.css") (prefers-color-scheme: light);*/
+/*@import url("variables-dark-theme.css") (prefers-color-scheme: dark);*/
+:root {
+  --fg-color: #e0e6f0;
+  --bg-color: #323232;
+  --fg-href: #f2e4c4;
+  --fg-border: #969696;
+  --bg-mark: #dfdfb0;
+  --fg-mark: #100f10;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --fg-color: #282828;
+    --bg-color: #f8f8f8;
+    --fg-href: #0000c0;
+    /* deliberaty choose a color with a lesser contrast */
+    /* APCA contrast value of 83.77 against bg-color */
+    --fg-border: #505050;
+    --bg-mark: #f9ff00;
+    --fg-mark: #282828;
+  }
+}
 
 :root {
   --sans-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji";
